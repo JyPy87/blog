@@ -1,11 +1,11 @@
+App\Entity\Category:
+  category{1..5}:
+    category: '<word()>'
+
 App\Entity\Post:
   post_{1..50}:
-    title: '<word(3,true)>'
-    body: '<word(150,true)>'
+    category: '@category*'
+    title: '<words(3,true)>'
+    body: '<words(150,true)>'
     createdAt: '<dateTimeBetween("-4 month", "now")>'
     updatedAt: '<dateTimeBetween("-4 days", "now")>'
-    categoy: '@category'
-
-App\Entity\Category:
-  categoy_{1..5}:
-    name: '<word()>'

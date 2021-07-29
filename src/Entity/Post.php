@@ -38,9 +38,34 @@ class Post
     private $updatedAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="name")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="post")
      */
     private $category;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content1;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content2;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content3;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content4;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content5;
 
     public function getId(): ?int
     {
@@ -103,6 +128,66 @@ class Post
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getContent1(): ?string
+    {
+        return $this->content1;
+    }
+
+    public function setContent1(?string $content1): self
+    {
+        $this->content1 = $content1;
+
+        return $this;
+    }
+
+    public function getContent2(): ?string
+    {
+        return $this->content2;
+    }
+
+    public function setContent2(?string $content2): self
+    {
+        $this->content2 = $content2;
+
+        return $this;
+    }
+
+    public function getContent3(): ?string
+    {
+        return $this->content3;
+    }
+
+    public function setContent3(?string $content3): self
+    {
+        $this->content3 = $content3;
+
+        return $this;
+    }
+
+    public function getContent4(): ?string
+    {
+        return $this->content4;
+    }
+
+    public function setContent4(?string $content4): self
+    {
+        $this->content4 = $content4;
+
+        return $this;
+    }
+
+    public function getContent5(): ?string
+    {
+        return $this->content5;
+    }
+
+    public function setContent5(?string $content5): self
+    {
+        $this->content5 = $content5;
 
         return $this;
     }

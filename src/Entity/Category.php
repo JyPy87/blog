@@ -22,11 +22,17 @@ class Category
     /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="category")
      */
-    private $name;
+    private $post;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $category;
+    
 
     public function __construct()
     {
-        $this->name = new ArrayCollection();
+        $this->post = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -37,29 +43,41 @@ class Category
     /**
      * @return Collection|Post[]
      */
-    public function getName(): Collection
+    public function getPost(): Collection
     {
-        return $this->name;
+        return $this->post;
     }
 
-    public function addName(Post $name): self
+    public function addPost(Post $post): self
     {
-        if (!$this->name->contains($name)) {
-            $this->name[] = $name;
-            $name->setCategory($this);
+        if (!$this->post->contains($post)) {
+            $this->post[] = $post;
+            $post->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeName(Post $name): self
+    public function removePost(Post $post): self
     {
-        if ($this->name->removeElement($name)) {
+        if ($this->name->removeElement($post)) {
             // set the owning side to null (unless already changed)
-            if ($name->getCategory() === $this) {
-                $name->setCategory(null);
+            if ($post->getCategory() === $this) {
+                $post->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
