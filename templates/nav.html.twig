@@ -7,32 +7,28 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link {{ 'post' in app.request.get('_route') ? ' active' }}" href="{{path('post_main')}}">Acceuil
-          </a>
+          <a class="nav-link {{ 'post' in app.request.get('_route') ? ' active' }}" href="{{path('post_main')}}">Acceuil</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="#">Articles</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link" href="#">A propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Contactez-moi !</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hobbies</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+            <a class="dropdown-item" href="#">Impression 3D</a>
+            <a class="dropdown-item" href="#">Sculpture Numérique</a>
           </div>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control me-sm-2" type="text" placeholder="Recherche d'un article ...">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
       </form>
     </div>
   </div>
