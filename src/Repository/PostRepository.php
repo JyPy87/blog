@@ -25,7 +25,8 @@ class PostRepository extends ServiceEntityRepository
         ->innerJoin('post.category', 'c')
         ->andWhere('c.category = :category')
         ->setParameter('category',$cat)
-       // ->orderBy('q.createdAt','DESC')
+        ->orderBy('post.createdAt','DESC')
+        ->setMaxResults(5)
         ->getQuery()
         ->getResult()
         ;
