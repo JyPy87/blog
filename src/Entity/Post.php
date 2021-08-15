@@ -67,6 +67,36 @@ class Post
      */
     private $content5;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content1description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content2description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content3description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content4description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content5description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $subtitle;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -188,6 +218,78 @@ class Post
     public function setContent5(?string $content5): self
     {
         $this->content5 = $content5;
+
+        return $this;
+    }
+
+    public function getContent1description(): ?string
+    {
+        return $this->content1description;
+    }
+
+    public function setContent1description(?string $content1description): self
+    {
+        $this->content1description = $content1description;
+
+        return $this;
+    }
+
+    public function getContent2description(): ?string
+    {
+        return $this->content2description;
+    }
+
+    public function setContent2description(?string $content2description): self
+    {
+        $this->content2description = $content2description;
+
+        return $this;
+    }
+
+    public function getContent3description(): ?string
+    {
+        return $this->content3description;
+    }
+
+    public function setContent3description(?string $content3description): self
+    {
+        $this->content3description = $content3description;
+
+        return $this;
+    }
+
+    public function getContent4description(): ?string
+    {
+        return $this->content4description;
+    }
+
+    public function setContent4description(?string $content4description): self
+    {
+        $this->content4description = $content4description;
+
+        return $this;
+    }
+
+    public function getContent5description(): ?string
+    {
+        return $this->content5description;
+    }
+
+    public function setContent5description(?string $content5description): self
+    {
+        $this->content5description = $content5description;
+
+        return $this;
+    }
+
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(?string $subtitle): self
+    {
+        $this->subtitle = $subtitle;
 
         return $this;
     }

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil!
+{% endblock %}
+
+{% block body %}
+	<div class="card mt-5 w-75 text-center">
+		<img src="{{post.content1}}" class="card-img-top" alt="{{post.content1description}}">
+		<div class="card-body">
+			<h5 class="card-title">{{post.title}}</h5>
+			<p class="card-text">{{post.subtitle}}</p>
+            <p>{{post.body}}</p>
+            
+		</div>
+	</div>
+{% endblock %}

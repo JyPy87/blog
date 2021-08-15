@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,13 +14,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class PostController extends AbstractController
 {
     /**
-     * @Route("/", name="main")
+     * @Route("", name="main")
      */
     public function index(PostRepository $postRepository): Response
     {
-        $posts = $postRepository->findByCategory('impression');
+        $posts = $postRepository->findLast();
         return $this->render('post/index.html.twig', [
-            'posts'=>$posts,
+            'posts' => $posts,
+        ]);
+    }
+    /**
+     * @Route("{id}", name="read", requirements={"id"="\d+"})
+     */
+    public function read(Post $post): Response
+    {
+        return $this->render('post/read.html.twig', [
+            'post' => $post
         ]);
     }
 }

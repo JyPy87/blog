@@ -32,6 +32,16 @@ class PostRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findLast()
+    {
+        return $this->createQueryBuilder('post')
+        ->orderBy('post.createdAt','DESC')
+        ->setMaxResults(5)
+        ->getQuery()
+        ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Post[] Returns an array of Post objects
     //  */
