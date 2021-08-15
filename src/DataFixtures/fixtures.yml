@@ -1,6 +1,14 @@
 App\Entity\Category:
-  category{1..5}:
-    category: '<word()>'
+  category_1:
+    category: 'développement'
+  category_2:
+    category: 'formation'
+  category_3:
+    category: 'divers'
+  category_4:
+    category: 'impression'
+  category_5:
+    category: 'sculpture'
 
 App\Entity\Post:
   post_{1..50}:

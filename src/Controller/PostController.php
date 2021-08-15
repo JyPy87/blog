@@ -17,7 +17,7 @@ class PostController extends AbstractController
      */
     public function index(PostRepository $postRepository): Response
     {
-        $posts = $postRepository->findByCategory('');
+        $posts = $postRepository->findByCategory('impression');
         return $this->render('post/index.html.twig', [
             'posts'=>$posts,
         ]);
