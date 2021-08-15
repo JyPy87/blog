@@ -8,15 +8,14 @@
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link {{ 'post' in app.request.get('_route') ? ' active' }}" href="{{path('post_main')}}">Acceuil</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="#">Articles</a>
-        </li>
-       <li class="nav-item">
-          <a class="nav-link" href="#">A propos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contactez-moi !</a>
+        </li>       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Articles</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Dévéloppement</a>
+            <a class="dropdown-item" href="#">Formations</a>
+            <a class="dropdown-item" href="#">Divers</a>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hobbies</a>
@@ -24,6 +23,12 @@
             <a class="dropdown-item" href="#">Impression 3D</a>
             <a class="dropdown-item" href="#">Sculpture Numérique</a>
           </div>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link" href="#">A propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contactez-moi !</a>
         </li>
       </ul>
       <form class="d-flex">

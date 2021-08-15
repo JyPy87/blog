@@ -17,8 +17,7 @@ class PostController extends AbstractController
      */
     public function index(PostRepository $postRepository): Response
     {
-        $posts = $postRepository->findByCategory('culpa');
-        dd($posts);
+        $posts = $postRepository->findByCategory('');
         return $this->render('post/index.html.twig', [
             'posts'=>$posts,
         ]);

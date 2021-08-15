@@ -23,7 +23,7 @@ class PostRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('post')
         ->innerJoin('post.category', 'c')
-        ->andWhere('c.category = :category')
+        ->andWhere('c.category = :category') //here category is the name of the category
         ->setParameter('category',$cat)
         ->orderBy('post.createdAt','DESC')
         ->setMaxResults(5)
