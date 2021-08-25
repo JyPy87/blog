@@ -34,25 +34,4 @@ class PostController extends AbstractController
             'post' => $post
         ]);
     }
-    /**
-     * @Route("search", name="search")
-    */
-    public function search(Request $request)
-    {
-        $posts = new Post();
-        $form = $this->createForm(SearchType::class, $posts);
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()) {
-            dd($form);
-            $em = $this->getDoctrine()->getManager();
-            
-
-            return $this->redirectToRoute('post/result.html.twig');
-        }
-        return $this->render('search.html.twig', [
-            'form' => $form->createView(),
-        ]);
-
-    }
 }
