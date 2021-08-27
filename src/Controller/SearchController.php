@@ -13,19 +13,29 @@ use Symfony\Component\Routing\Annotation\Route;
 class SearchController extends AbstractController
 {
     /**
-     * @Route("/post/search", name="search_post")
+     * @Route("search", name="search_post")
      */
-    public function searchPost(Request $request, PostRepository $postRepository): Response
+    public function searchBar()
     {
-        $searchPostForm = $this->createForm(SearchType::class);
-     
-        if($searchPostForm->handleRequest($request)->isSubmitted() && $searchPostForm->isValid()){
-            dump($request);
-            $criteria = $searchPostForm->getData();
-            $posts = $postRepository->searchPost($criteria);
-        }
-        return $this->render('search/post.html.twig', [
-            'form' => $searchPostForm->createView(),
-        ]);
+       $form = $this->createFormBuilder()
+       ->setAction($this->generateUrl('handleSearch'))
+       ->add('query', TextType::class, [
+        'label' => false,
+        'attr' => [
+            'class' => 'form-control',
+            'placeholder' => 'Entrez un mot-clé'
+        ]
+    ])
+    ->add('recherche', SubmitType::class, [
+        'attr' => [
+            'class' => 'btn btn-primary'
+        ]
+    ])
+    ->getForm();
+return $this->render('search/searchBar.html.twig', [
+    'form' => $form->createView()
+]);
+  
+       
     }
 }
