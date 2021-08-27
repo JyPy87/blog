@@ -17,25 +17,35 @@ class SearchController extends AbstractController
      */
     public function searchBar()
     {
-       $form = $this->createFormBuilder()
-       ->setAction($this->generateUrl('handleSearch'))
-       ->add('query', TextType::class, [
-        'label' => false,
-        'attr' => [
-            'class' => 'form-control',
-            'placeholder' => 'Entrez un mot-clé'
-        ]
-    ])
-    ->add('recherche', SubmitType::class, [
-        'attr' => [
-            'class' => 'btn btn-primary'
-        ]
-    ])
-    ->getForm();
-return $this->render('search/searchBar.html.twig', [
-    'form' => $form->createView()
-]);
-  
-       
+        $form = $this->createFormBuilder()
+            ->setAction($this->generateUrl('handleSearch'))
+            ->add('query', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Entrez un mot-clé'
+                ]
+            ])
+            ->add('recherche', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-primary'
+                ]
+            ])
+            ->getForm();
+        return $this->render('search/searchBar.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route ("handleSearch", name="handleSearch")
+     */
+    public function handleSearch(Request $request, PostRepository $postRepository)
+    {
+        $query = $request->request->get('form')['query'];
+        if($query){
+        //    $post = $postRepository->find
+        }
+
     }
 }
