@@ -47,10 +47,11 @@ class SearchController extends AbstractController
     {
         $query = $request->request->get('form')['query'];
         if($query){
-            dd($query);
-        //    $post = $postRepository->find
+             $post = $postRepository->findPostBySearch($query);
+             dd($post);
         }
-        return $this->render('search/result.html.twig');
-
+        return $this->render('search/result.html.twig',[
+           // 'posts'=>$post
+        ]);
     }
 }

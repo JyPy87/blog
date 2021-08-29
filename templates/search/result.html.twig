@@ -1,4 +1,11 @@
 {% extends "base.html.twig" %}
 {% block body %}
-RESULTATS
+
+	{#}if post request exist{#}
+	{% if app.request.method == 'POST' %}
+    
+    {% if post %}{% endif %}
+    
+
+    {% endif %}
 {% endblock %}

@@ -42,6 +42,16 @@ class PostRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findPostBySearch(string $query)
+    {
+        return $this->createQueryBuilder('post')
+        ->andwhere('post.title = :query')
+        ->setParameter('query',$query)
+        ->getQuery()
+        ->getResult()
+        ;           
+    }
+
     // /**
     //  * @return Post[] Returns an array of Post objects
     //  */
