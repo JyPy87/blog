@@ -2,14 +2,11 @@
 
 namespace App\Controller;
 
-use App\Entity\Post;
-use App\Form\SearchType;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class SearchController extends AbstractController
@@ -26,7 +23,6 @@ class SearchController extends AbstractController
                 'attr' => [
                     'class' => 'form-control me-sm-2',
                     'placeholder' => 'Chercher un article',
-                    'style'=>'color:white',
                 ]
             ])
             ->add('submit', SubmitType::class, [
