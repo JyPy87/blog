@@ -6,22 +6,12 @@
 
 		{% if posts | length == 0 %}
 
-			<h4>Aucun resultat</h4>
+			<h4>Aucun resultat :( </h4>
 
 		{% else %}
-
-			{% for post in posts %}
-				<div class="card mt-5 w-75 text-center">
-					<img src="{{post.content1}}" class="card-img-top" alt="{{post.content1description}}">
-					<div class="card-body">
-						<h5 class="card-title">{{post.title}}</h5>
-						<p class="card-text">{{post.subtitle}}</p>
-						<a href="{{path('post_read',{'id':post.id}) }}" class="btn btn-primary">Lire la suite</a>
-					</div>
-				</div>
-			{% endfor %}
+			{% include "post/_posts.html.twig" %}
 		{% endif %}
 
 	{% endif %}
-	
+
 {% endblock %}

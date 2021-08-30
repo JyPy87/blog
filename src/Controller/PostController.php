@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Post;
-use App\Form\SearchType;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PostController extends AbstractController
 {
     /**
-     * @Route("", name="main")
+     * @Route("", name="index")
      */
     public function index(PostRepository $postRepository): Response
     {
@@ -33,5 +31,18 @@ class PostController extends AbstractController
         return $this->render('post/read.html.twig', [
             'post' => $post
         ]);
+    }
+    /**
+     * @Route("{cat}", name="article")
+     */
+    public function article(PostRepository $postRepository, string $cat)
+    {
+        $posts = $postRepository->findByCategory($cat);
+
+        return $this->render('post/index.html.twig',
+       [
+           'posts'=>$posts,        
+        ]);
+
     }
 }

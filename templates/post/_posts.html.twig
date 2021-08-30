@@ -1,0 +1,21 @@
+{% for post in posts %}
+
+	<div class="card mt-5 w-75 text-center">
+		<img src="{{post.content1}}" class="card-img-top" alt="{{post.content1description}}">
+		<div class="card-body">
+			<h5 class="card-title">{{post.title}}</h5>
+			<p class="card-text">{{post.subtitle}}</p>
+			<a href="{{path('post_read',{'id':post.id}) }}" class="btn btn-primary">Lire la suite</a>
+		</div>
+		<div class="card-footer text-muted">
+			Crée avec amour le 
+			{{post.createdAt|date('d m Y')}}.
+
+			{% if post.updatedAt is not null %}
+				Modifié avec sagesse le 
+				{{post.updatedAt|date('d m Y')}}.
+			{% endif %}
+		</div>
+	</div>
+
+{% endfor %}

@@ -1,6 +1,6 @@
 App\Entity\Category:
   category_1:
-    category: 'développement'
+    category: 'developpement'
   category_2:
     category: 'formation'
   category_3:
