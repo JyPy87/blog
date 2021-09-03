@@ -8,12 +8,11 @@
 			<a href="{{path('post_read',{'id':post.id}) }}" class="btn btn-primary">Lire la suite</a>
 		</div>
 		<div class="card-footer text-muted">
-			Crée avec amour le 
-			{{post.createdAt|date('d m Y')}}.
-
+			Créé avec amour le 
+			{{post.createdAt|date('d m Y')}}
 			{% if post.updatedAt is not null %}
 				Modifié avec sagesse le 
-				{{post.updatedAt|date('d m Y')}}.
+				{{post.updatedAt|date('d m Y')}}
 			{% endif %}
 		</div>
 	</div>
