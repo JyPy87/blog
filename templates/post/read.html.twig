@@ -2,16 +2,16 @@
 
 {% block body %}
 	<div class="card mt-5 w-75 text-center">
-		<img src="{{post.content1}}" class="card-img-top" alt="{{post.content1description}}">
 		<div class="card-body">
 			<h5 class="card-title">{{post.title}}</h5>
 			<p class="card-text">{{post.subtitle}}</p>
-            <p>{{post.body}}</p>
-            <img src="{{post.content2}}" class="card-img-top" alt="{{post.content2description}}">
-            <img src="{{post.content3}}" class="card-img-top" alt="{{post.content3description}}">
-            <img src="{{post.content4}}" class="card-img-top" alt="{{post.content4description}}">
-            <img src="{{post.content5}}" class="card-img-top" alt="{{post.content5description}}">
-            
+			<img src="{{post.content1}}" class="card-img-top" alt="{{post.content1description}}">
+			<p>{{post.body}}</p>
+			<img src="{{post.content2}}" class="card-img-top" alt="{{post.content2description}}">
+			<img src="{{post.content3}}" class="card-img-top" alt="{{post.content3description}}">
+			<img src="{{post.content4}}" class="card-img-top" alt="{{post.content4description}}">
+			<img src="{{post.content5}}" class="card-img-top" alt="{{post.content5description}}">
 		</div>
+	{% include "post/_footer.html.twig" %}
 	</div>
 {% endblock %}

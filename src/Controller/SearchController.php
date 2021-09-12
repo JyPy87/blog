@@ -26,11 +26,10 @@ class SearchController extends AbstractController
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label'=>'Recherche',
-                'attr'=>['class'=>'btn btn-secondary my-2 my-sm-0'],
+                'label' => 'Recherche',
+                'attr' => ['class' => 'btn btn-secondary my-2 my-sm-0'],
             ])
             ->getForm();
-
         return $this->render('search/searchBar.html.twig', [
             'form' => $form->createView()
         ]);
@@ -42,11 +41,11 @@ class SearchController extends AbstractController
     public function handleSearch(Request $request, PostRepository $postRepository)
     {
         $query = $request->request->get('form')['query'];
-        if($query){
-             $post = $postRepository->findPostBySearch($query);
+        if ($query) {
+            $posts = $postRepository->findPostBySearch($query);
         }
-        return $this->render('search/result.html.twig',[
-            'posts'=>$post
+        return $this->render('search/result.html.twig', [
+            'posts' => $posts
         ]);
     }
 }

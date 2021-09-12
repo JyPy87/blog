@@ -1,21 +1,15 @@
 {% for post in posts %}
 
 	<div class="card mt-5 w-75 text-center">
-		<img src="{{post.content1}}" class="card-img-top" alt="{{post.content1description}}">
 		<div class="card-body">
 			<h5 class="card-title">{{post.title}}</h5>
 			<p class="card-text">{{post.subtitle}}</p>
+			{% if post.content1 is not null %}
+				<img src="{{post.content1}}" class="card-img-top" alt="{{post.content1description}}">
+			{% endif %}
 			<a href="{{path('post_read',{'id':post.id}) }}" class="btn btn-primary">Lire la suite</a>
 		</div>
-		<div class="card-footer text-muted">
-			Créé avec amour le 
-			{{post.createdAt|date('d/m/Y')}}.
-			{% if post.updatedAt is not null %}
-				Modifié avec sagesse le 
-				{{post.updatedAt|date('d/m/Y')}}.
-			{% endif %}
-			Habillement placé dans la catégorie {{post.category.category}}.
-		</div>
+		{% include "post/_footer.html.twig" %}
 	</div>
 
 {% endfor %}

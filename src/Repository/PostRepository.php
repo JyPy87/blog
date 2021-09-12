@@ -46,7 +46,7 @@ class PostRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('post')
         ->andwhere('post.title LIKE :query')
-        ->setParameter('query',"%$query%")
+        ->setParameter('query','%'.$query.'%')
         ->getQuery()
         ->getResult()
         ;           
