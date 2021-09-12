@@ -9,11 +9,12 @@
 		</div>
 		<div class="card-footer text-muted">
 			Créé avec amour le 
-			{{post.createdAt|date('d m Y')}}
+			{{post.createdAt|date('d/m/Y')}}.
 			{% if post.updatedAt is not null %}
 				Modifié avec sagesse le 
-				{{post.updatedAt|date('d m Y')}}
+				{{post.updatedAt|date('d/m/Y')}}.
 			{% endif %}
+			Habillement placé dans la catégorie {{post.category.category}}.
 		</div>
 	</div>
 

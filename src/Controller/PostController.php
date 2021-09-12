@@ -23,6 +23,7 @@ class PostController extends AbstractController
             'posts' => $posts,
         ]);
     }
+
     /**
      * @Route("{id}", name="read", requirements={"id"="\d+"})
      */
@@ -32,6 +33,7 @@ class PostController extends AbstractController
             'post' => $post
         ]);
     }
+    
     /**
      * @Route("{cat}", name="article")
      */
@@ -43,6 +45,5 @@ class PostController extends AbstractController
        [
            'posts'=>$posts,        
         ]);
-
     }
 }
