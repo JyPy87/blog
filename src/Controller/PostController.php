@@ -45,5 +45,6 @@ class PostController extends AbstractController
        [
            'posts'=>$posts,        
         ]);
+        
     }
 }

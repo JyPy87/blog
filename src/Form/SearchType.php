@@ -14,7 +14,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SearchType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+ /*   public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('title', TextType::class, [
@@ -27,7 +27,7 @@ class SearchType extends AbstractType
                 'attr'=>['class'=>'btn btn-secondary my-2 my-sm-0'],
             ])
         ;
-    }
+    }*/
 
     public function configureOptions(OptionsResolver $resolver)
     {
